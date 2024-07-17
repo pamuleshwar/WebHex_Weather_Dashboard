@@ -1,22 +1,19 @@
 const ForecastCard = (data) => {
-  console.log(data);
     
     const {dt_txt, main, wind} = data?.data;
   return (
-    <div className="border m-5 p-3 h-52 text-center bg-sky-200">
-        <div className="m-1">{dt_txt.substring(0,10)}</div>
+    <div className="flex flex-col justify-between border rounded-lg shadow-xl m-3 p-3 h-52 text-center bg-sky-200">
+        <div className="m-1 font-bold text-lg">{dt_txt.substring(0,10)}</div>
 
         <div className="m-1">
-          <div className="">Temperature : {main?.temp} °C</div>
+          <div className="font-semibold">Temperature : {main?.temp} °C</div>
           <div className="m-1">
-            <div>Max. Temp : {main?.temp_max} °C</div>
-            <div>Min. Temp : {main?.temp_min} °C</div>
           </div>
         </div>
 
         <div className="m-1">
           <div className="">Humidity : {main?.humidity}%</div>
-          <div>Wind Speed : {wind?.speed}m/s</div>
+          <div>Wind Speed : {wind?.speed} m/s</div>
         </div>
     </div>
   )

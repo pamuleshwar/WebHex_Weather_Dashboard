@@ -5,7 +5,7 @@ import { useState } from "react";
 function App() {
   const [inputLocation, setInputLocation] = useState("");
 
-  const [currentLocation, setCurrentLocation] = useState("London");
+  const [currentLocation, setCurrentLocation] = useState("New Delhi");
 
   const handleFind = () => {
     setCurrentLocation(inputLocation);

@@ -13,12 +13,14 @@ const Forecast = ({currentLocation}) => {
         }
     },[currentLocation]);
 
-    const findData = async () => {
+    const findData = async (currentLocation) => {
         const data = await fetch(`${FORECAST_URL}&q=${currentLocation}&appid=${KEY}`);
         const json = await data.json();
 
         setForeCastData(json?.list.filter((e) => e?.dt_txt.includes("12:00:00")));
     }
+    
+    if(foreCastData === null) return;
 
     
     return (
